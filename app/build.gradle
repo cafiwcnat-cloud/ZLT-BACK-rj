@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.zlt.tool'
+    namespace 'com.zlt.fullpro'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.zlt.tool"
+        applicationId "com.zlt.fullpro"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -15,8 +15,12 @@ android {
     }
 
     buildTypes {
-        release { minifyEnabled false }
-        debug { minifyEnabled false }
+        release {
+            minifyEnabled false
+        }
+        debug {
+            minifyEnabled false
+        }
     }
 }
 
