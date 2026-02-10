@@ -1,13 +1,11 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zltfullpro.app">
 
     <application
-        android:label="ZLT Full Pro Tool"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:label="ZLT Full Pro"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
 
-        <activity android:name=".MainActivity"
-            android:exported="true">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -15,5 +13,4 @@
         </activity>
 
     </application>
-
 </manifest>
