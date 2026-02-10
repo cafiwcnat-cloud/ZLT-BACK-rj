@@ -1,4 +1,4 @@
-name: Build ZLT APK FINAL
+name: Build ZLT APK FINAL REAL
 
 on:
   push:
@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       # Checkout Repo
-      - name: Checkout
+      - name: Checkout Source
         uses: actions/checkout@v4
 
-      # Setup Java (Required for Android Build)
+      # Setup Java
       - name: Setup Java 17
         uses: actions/setup-java@v4
         with:
@@ -25,16 +26,16 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      # Fix Gradle Permission (IMPORTANT)
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      # Setup Gradle
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
 
-      # Build APK
+      # Build APK (Using System Gradle)
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
 
       # Upload APK Artifact
-      - name: Upload APK
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ZLT-FINAL-APK
